@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ManifestoRadar from './ManifestoRadar';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import { 
   Shield, 
@@ -815,17 +816,33 @@ const SovereignHome = () => {
       </div>
     );
   }
-  export default function BootstrapApp() {
-      return (
-          <Router>
-              <ScrollToTop />
-              <Routes>
-                  <Route path="/" element={<SovereignHome />} />
-                  <Route path="/manifesto/:pageId" element={<SovereignManifestoPage />} />
-              </Routes>
-          </Router>
-      );
-  }
+  // ---------------------------------------------------------
+// 6. BOOTSTRAP ENTRY POINT (THE GATEKEEPER)
+// ---------------------------------------------------------
+
+export default function BootstrapApp() {
+    // 1. STAV ZÁMKU (Gatekeeper State)
+    // Pokud je false, ukážeme Radar. Pokud true, pustíme Router.
+    const [isProtocolActive, setIsProtocolActive] = useState(false);
+
+    // 2. PODMÍNKA BRÁNY
+    if (!isProtocolActive) {
+        // Zde voláme ten soubor ManifestoRadar.tsx, co jsme vytvořili
+        return <ManifestoRadar onEnter={() => setIsProtocolActive(true)} />;
+    }
+
+    // 3. PŮVODNÍ ROUTER (Váš Svatý Grál)
+    // Toto se spustí až po kliknutí na "ENTER"
+    return (
+        <Router>
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<SovereignHome />} />
+                <Route path="/manifesto/:pageId" element={<SovereignManifestoPage />} />
+            </Routes>
+        </Router>
+    );
+}
 
 
 /**
