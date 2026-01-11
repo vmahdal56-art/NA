@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "staging",
+    "site": "huddleme",
     "public": "dist",
     "ignore": [
       "firebase.json",

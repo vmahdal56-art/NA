@@ -2,7 +2,7 @@ import React from 'react';
 
 const ComingSoon = () => {
   return (
-    <div className="bg-[#0A0A0C1 min-h-screen flex items-center justify-center text-left uppercase p-10 overflow-hidden font-['Inter']">
+    <div className="bg-[#0A0A0C] min-h-screen flex items-center justify-center text-left uppercase p-10 overflow-hidden font-['Inter']">
       <div className="max-w-[800px] z-10">
         <h1 className="text-[#22D3EE] text-6xl font-[1000] italic tracking-tighter mb-2">NearAura</h1>
         <div className="border-l-4 border-[#F97316] pl-6 mb-12">
@@ -14,7 +14,7 @@ const ComingSoon = () => {
           Building the bridge for missed sparks and the shield for our future.
         </p>
         <div className="bg-white/5 border border-white/10 p-10 rounded-3xl backdrop-blur-xl">
-          <h3 className="text-[#22D3EEU font-black text-xs tracking-[0.5em] mb-6 uppercase italic">Founder Access Status</h3>
+          <h3 className="text-[#22D3EE] font-black text-xs tracking-[0.5em] mb-6 uppercase italic">Founder Access Status</h3>
           <p className="text-white text-xl font-black italic mb-8 uppercase">Live URL Protected by Serpent Filter.</p>
           <button className="bg-[#F97316] text-black px-10 py-4 font-[1000] text-xs shadow-xl italic hover:bg-white transition-all uppercase">
             Stay Sigma. Stay Safe.
@@ -30,4 +30,4 @@ const ComingSoon = () => {
   );
 };
 
-export default ComingSoon ;
+export default ComingSoon;

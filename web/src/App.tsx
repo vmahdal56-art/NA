@@ -1,5 +1,5 @@
+import ComingSoon from "./ComingSoon";
 import React, { useState, useEffect } from 'react';
-import ManifestoRadar from './ManifestoRadar';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import { 
   Shield, 
@@ -820,102 +820,7 @@ const SovereignHome = () => {
 // 6. BOOTSTRAP ENTRY POINT (THE GATEKEEPER)
 // ---------------------------------------------------------
 
+
 export default function BootstrapApp() {
-    // 1. STAV ZÁMKU (Gatekeeper State)
-    // Pokud je false, ukážeme Radar. Pokud true, pustíme Router.
-    const [isProtocolActive, setIsProtocolActive] = useState(false);
-
-    // 2. PODMÍNKA BRÁNY
-    if (!isProtocolActive) {
-        // Zde voláme ten soubor ManifestoRadar.tsx, co jsme vytvořili
-        return <ManifestoRadar onEnter={() => setIsProtocolActive(true)} />;
-    }
-
-    // 3. PŮVODNÍ ROUTER (Váš Svatý Grál)
-    // Toto se spustí až po kliknutí na "ENTER"
-    return (
-        <Router>
-            <ScrollToTop />
-            <Routes>
-                <Route path="/" element={<SovereignHome />} />
-                <Route path="/manifesto/:pageId" element={<SovereignManifestoPage />} />
-            </Routes>
-        </Router>
-    );
+    return <ComingSoon />;
 }
-
-
-/**
- * =========================================================================================
- * 🔱 NEARAURA SOVEREIGN ARCHITECTURE - SYSTEM SIGNATURE 🔱
- * =========================================================================================
- * * PROJECT:        NearAura (formerly HuddleMe)
- * CODENAME:       GENESIS MONOLITH
- * VERSION:        1.0.4 (Sovereign Edition)
- * BUILD DATE:     January 2026
- * LOCATION:       London Zone 1 / Prague HQ
- * ARCHITECT:      Viktor Mahdal (CTO & Director)
- * * -----------------------------------------------------------------------------------------
- * 📜 MISSION STATEMENT (THE DNA):
- * * "We are building the end of lonely swiping. We are building a Reality Operating System.
- * We prioritize biological signals (Intent) over digital noise.
- * We protect the vulnerable via the Jarmila Fund (10% Revenue Pledge).
- * We do not sell data. We sell sovereignty."
- * * -----------------------------------------------------------------------------------------
- * 🛡️ SECURITY PROTOCOLS:
- * * [x] 12-Fruit Intent System Active
- * [x] Hardware ID Validation (No Bots)
- * [x] Ghost Mode (Sovereign Privacy)
- * [x] Radar Triangulation (100m - Global)
- * [x] Jarmila Anti-Stalking Shield
- * * -----------------------------------------------------------------------------------------
- * 🍎 THE ORCHARD MATRIX (INTENT KEYS):
- * * 01. PINEAPPLE (Yellow/Gold) ... Serious Relationship / Marriage Protocol
- * 02. CHERRY (Red) .............. Flirt / Short Term / Passion
- * 03. PEACH (Pink) .............. Friendship / Platonic / Networking
- * 04. BANANA (Yellow) ........... Casual / Fun (Restricted Visibility)
- * 05. APPLE (Green) ............. Mentor / Guide / Help
- * 06. GRAPES (Purple) ........... Group / Party / Event
- * ... [See Full Documentation for 12-Fruit Spectrum]
- * * -----------------------------------------------------------------------------------------
- * ⚖️ LEGAL & COPYRIGHT:
- * * Copyright © 2026 NearAura Ltd. All Rights Reserved.
- * This software is the intellectual property of Viktor Mahdal and the Sovereign Eight.
- * Unauthorized copying, modification, or distribution of this "Source DNA" is strictly 
- * prohibited under International Copyright Laws and the Hendy Protocol.
- * * "TRUTH WINS."
- * * -----------------------------------------------------------------------------------------
- * * .       .
- * |\     /|
- * | \   / |
- * |  \ /  |      NEARAURA
- * |   X   |      SOVEREIGN
- * |  / \  |      SYSTEMS
- * | /   \ |
- * |/     \|
- * '       '
- * * =========================================================================================
- * END OF TRANSMISSION.
- * =========================================================================================
- */
-
-// -----------------------------------------------------------------------------------------
-// 🔧 DEBUG & PERFORMANCE UTILITIES (Hidden Layer)
-// -----------------------------------------------------------------------------------------
-
-/*
-   Performance Note:
-   The Radar System uses SVG rendering for maximum battery efficiency on iOS devices.
-   Do not replace with Canvas unless user count exceeds 5000 in a single viewport.
-*/
-
-// console.log("System Status: ONLINE");
-// console.log("Jarmila Fund: ACTIVE");
-// console.log("Orchard Protocol: SECURED");
-
-/*
-   TODO FOR V2.0:
-   - Implement Hendy Zone Geofencing (Lat/Long Hardcoding)
-   - Integrate Stripe Connect for Direct Founder Payouts
-   - Activate "God Mode" for verified investors
-*/
